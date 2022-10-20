@@ -20,12 +20,11 @@
   console.log("===yo!!");
   console.log("document.cookie:", document.cookie);
   function sendVerify() {
-    return fetch(`http://localhost:3000`, {
+    return fetch(`https://stage.wegoing.io/app/password/forgot`, {
       cache: "no-cache",
       method: "POST",
       mode: "no-cors",
       credentials: "include",
-      cookie: true
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
