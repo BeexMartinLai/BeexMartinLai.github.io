@@ -1,0 +1,45 @@
+<body>
+  <div
+    style="
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    "
+  >
+    <div>iframe sample</div>
+    <button id="setCookie">setCookie</button>
+    <button id="getCookie">getCookie</button>
+    <button id="getCookie2">getCookie cross cookie</button>
+  </div>
+</body>
+<script>
+  console.log("===yo!!");
+  console.log("document.cookie:", document.cookie);
+  function sendVerify() {
+    return fetch(`http://localhost:3000`, {
+      cache: "no-cache",
+      method: "POST",
+      mode: "no-cors",
+      credentials: "include",
+      cookie: true
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log("error:", error));
+  }
+  document.querySelector("#setCookie").addEventListener("click", (event) => {
+    console.log("setCookie click:", document.parentElement);
+    sendVerify();
+    // document.cookie = "cookie3=value3";
+  });
+  document.querySelector("#getCookie").addEventListener("click", (event) => {
+    console.log("getCookie click:", document.cookie);
+  });
+  document.querySelector("#getCookie2").addEventListener("click", (event) => {
+    console.log("getCookie2 click::", document.cookie);
+  });
+</script>
