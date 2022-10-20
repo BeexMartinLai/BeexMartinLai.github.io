@@ -36,7 +36,10 @@
   }
   document.querySelector("#send1").addEventListener("click", (event) => {
     console.log("send1:", window.parent);
-    window.parent.postMessage("test123123", "stage.wegoing.io");
+    window.parent.postMessage(
+      "test123123",
+      "https://stage.wegoing.io/s/jUnM42"
+    );
   });
 
   document.querySelector("#send2").addEventListener("click", (event) => {
@@ -51,7 +54,7 @@
 
   document.querySelector("#send4").addEventListener("click", (event) => {
     console.log("send4:", window.parent);
-    window.parent.postMessage("test123123", "https//stage.wegoing.io");
+    window.parent.postMessage("test123123", "https://stage.wegoing.io");
   });
 
   document.querySelector("#setCookie").addEventListener("click", (event) => {
