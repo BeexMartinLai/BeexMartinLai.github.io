@@ -20,13 +20,12 @@
   console.log("===yo!!");
   console.log("document.cookie:", document.cookie);
   function sendVerify() {
-    return fetch(`https://stage.wegoing.io/app/tasks?sort_by=1&page=1&page_size=50`, {
-      cache: "no-cache",
-      method: "POST",
-      mode: "no-cors",
-      credentials: "include",
-      cookie: true,
-    })
+    return fetch(
+      `https://stage.wegoing.io/app/tasks?sort_by=1&page=1&page_size=50`,
+      {
+        method: "GET",
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.log("error:", error));
