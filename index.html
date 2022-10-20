@@ -31,15 +31,15 @@
       .then((data) => console.log(data))
       .catch((error) => console.log("error:", error));
   }
-  document.querySelector("#setCookie").addEventListener("click", (event) => {
+  document.querySelector("#send").addEventListener("click", (event) => {
     console.log("setCookie click:", document.parentElement);
     sendVerify();
-    // document.cookie = "cookie3=value3";
+  });
+  document.querySelector("#setCookie").addEventListener("click", (event) => {
+    console.log("getCookie click:", document.cookie);
+    document.cookie = "cookie3=value3";
   });
   document.querySelector("#getCookie").addEventListener("click", (event) => {
-    console.log("getCookie click:", document.cookie);
-  });
-  document.querySelector("#getCookie2").addEventListener("click", (event) => {
     console.log("getCookie2 click::", document.cookie);
   });
 </script>
