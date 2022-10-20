@@ -41,17 +41,17 @@
 
   document.querySelector("#send2").addEventListener("click", (event) => {
     console.log("send2:", window.parent);
-    window.parent.postMessage("test123123")
+    window.parent.postMessage("test123123", "*");
   });
 
   document.querySelector("#send3").addEventListener("click", (event) => {
     console.log("send3:", parent);
-    parent.postMessage("test12312344")
+    parent.postMessage("test12312344", "*");
   });
 
   document.querySelector("#send4").addEventListener("click", (event) => {
     console.log("send4:", parent);
-    postMessage("test12312344555")
+    postMessage("test12312344555", "*");
   });
 
   document.querySelector("#setCookie").addEventListener("click", (event) => {
