@@ -52,9 +52,10 @@
     parent.postMessage("test12312344", "*");
   });
 
-  document.querySelector("#send4").addEventListener("click", (event) => {
-    console.log("send4:", window.parent);
-    window.parent.postMessage("test123123", "https://stage.wegoing.io");
+  document.getElementById("send4").addEventListener("click", (event) => {
+    console.log("==444:", window.parent);
+    if (window.parent)
+      window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
   });
 
   document.querySelector("#setCookie").addEventListener("click", (event) => {
