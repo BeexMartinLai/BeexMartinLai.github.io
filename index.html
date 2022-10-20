@@ -12,6 +12,7 @@
   >
     <div>iframe sample</div>
     <button id="send">send</button>
+    <button id="send2">send2</button>
     <button id="setCookie">setCookie</button>
     <button id="getCookie">getCookie</button>
   </div>
@@ -32,9 +33,15 @@
       .catch((error) => console.log("error:", error));
   }
   document.querySelector("#send").addEventListener("click", (event) => {
-    console.log("setCookie click:", document.parentElement);
+    console.log("send:", document.parentElement);
     sendVerify();
   });
+
+  document.querySelector("#send2").addEventListener("click", (event) => {
+    console.log("send2:", document.parentElement);
+    window.parent.postMessage("test123123")
+  });
+
   document.querySelector("#setCookie").addEventListener("click", (event) => {
     console.log("getCookie click:", document.cookie);
     document.cookie = "cookie3=value3";
