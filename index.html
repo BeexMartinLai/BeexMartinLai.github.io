@@ -24,6 +24,7 @@
       `https://stage.wegoing.io/app/tasks?sort_by=1&page=1&page_size=50`,
       {
         method: "GET",
+        credentials: "include",
       }
     )
       .then((response) => response.json())
