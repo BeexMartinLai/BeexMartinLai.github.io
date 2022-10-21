@@ -54,6 +54,7 @@
 
   document.getElementById("send4").addEventListener("click", (event) => {
     console.log("==444:", window.parent);
+    console.log("==555:", window.self === window.top);
     if (window.parent)
       window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
   });
