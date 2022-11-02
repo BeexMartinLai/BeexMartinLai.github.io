@@ -11,15 +11,16 @@
     "
   >
     <div>iframe sample</div>
-    <button id="send1">send</button>
-    <button id="send2">send2</button>
+    <button id="cpc_btn">send success</button>
+    <button>send fail</button>
+    <!-- <button id="send2">send2</button>
     <button id="send3">send3</button>
     <button id="send4">send4</button>
     <button id="setCookie">setCookie</button>
-    <button id="getCookie">getCookie</button>
+    <button id="getCookie">getCookie</button> -->
   </div>
 </body>
-<script>
+<!-- <script>
   console.log("===yo!!");
   console.log("document.cookie:", document.cookie);
   function sendVerify() {
@@ -53,8 +54,6 @@
   });
 
   document.getElementById("send4").addEventListener("click", (event) => {
-    console.log("==444:", window.parent);
-    console.log("==555:", window.self === window.top);
     if (window.self !== window.top)
       window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
   });
@@ -65,5 +64,12 @@
   });
   document.querySelector("#getCookie").addEventListener("click", (event) => {
     console.log("getCookie2 click::", document.cookie);
+  });
+</script> -->
+
+<script>
+  document.getElementById("cpc_btn").addEventListener("click", (event) => {
+    if (window.self !== window.top)
+      window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
   });
 </script>
