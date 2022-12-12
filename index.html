@@ -11,7 +11,8 @@
     "
   >
     <div>iframe sample</div>
-    <button id="cpc_btn">send success</button>
+    <button id="cpc_btn_stage">send success stage</button>
+    <button id="cpc_btn_www">send success www</button>
     <button>send fail</button>
     <!-- <button id="send2">send2</button>
     <button id="send3">send3</button>
@@ -68,8 +69,14 @@
 </script> -->
 
 <script>
-  document.getElementById("cpc_btn").addEventListener("click", (event) => {
+  document
+    .getElementById("cpc_btn_stage")
+    .addEventListener("click", (event) => {
+      if (window.self !== window.top)
+        window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
+    });
+  document.getElementById("cpc_btn_www").addEventListener("click", (event) => {
     if (window.self !== window.top)
-      window.parent.postMessage("CPCRecord", "https://stage.wegoing.io");
+      window.parent.postMessage("CPCRecord", "https://www.wegoing.io");
   });
 </script>
